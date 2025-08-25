@@ -1,6 +1,6 @@
 # Multimodal-RAG
 
-*A Retrieval-Augmented Generation system that answers questions about a device using both its manual and annotated images.*  
+A Retrieval-Augmented Generation system that answers questions about a device using both its manual and annotated images.
 
 ## Overview  
 This project demonstrates a **Multimodal RAG (Retrieval-Augmented Generation)** pipeline for device support and troubleshooting.  
@@ -36,15 +36,15 @@ This makes it easier for end users to **understand instructions visually and con
 ```
 
 multimodal-rag-demo/
-│── data/                # Device manual (PDF/text) + reference images
-│── notebooks/           # Exploration & prototyping
+│── data/  
+│── notebooks/
 │── src/
-│    ├── retriever.py    # Text + image retriever logic
-│    ├── rag\_pipeline.py # Multimodal RAG pipeline
-│    ├── ui.py           # Streamlit/Gradio app
-│    ├── utils/          # Helper functions
-│── requirements.txt     # Dependencies
-│── README.md            # This file
+│    ├── retriever.py 
+│    ├── rag\_pipeline.py
+│    ├── ui.py
+│    ├── utils/
+│── requirements.txt
+│── README.md
 
 ````
 
