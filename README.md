@@ -1,10 +1,4 @@
-## PaperBrain-RAG
-
-Perfect, here’s a **ready-to-use README.md** you can copy-paste straight into your GitHub repo. I’ll make it professional, beginner-friendly, and recruiter-attractive.
-
----
-
-# Smart Document Q\&A (RAG Demo)
+# PaperBrain-RAG
 
 A simple **Retrieval-Augmented Generation (RAG)** system that lets you upload a PDF manual (or any document) and **ask natural language questions** about it.
 
