@@ -27,7 +27,7 @@ PaperBrain-RAG/
 │   └── indexes/      
 ├── src/
 │   ├── retriever.py
-│   ├── rag\_pipeline.py
+│   ├── rag_pipeline.py
 │   └── ui.py  
 ├── requirements.txt
 └── README.md
