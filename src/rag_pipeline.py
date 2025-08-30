@@ -1,15 +1,9 @@
-"""
-rag_pipeline.py
----------------
-A thin wrapper to manage PDFs, indexes, and queries.
-"""
-
 import os
 from typing import List, Dict
 
 from sentence_transformers import SentenceTransformer
 
-from .retriever import (
+from retriever import (
     extract_pdf_chunks,
     load_embedder,
     build_index,
@@ -17,7 +11,6 @@ from .retriever import (
     save_index,
     search,
     IndexArtifacts,
-    Chunk,
 )
 
 class RagPipeline:
@@ -29,12 +22,15 @@ class RagPipeline:
         os.makedirs(self.index_dir, exist_ok=True)
 
         self.embedder: SentenceTransformer = load_embedder()
-        self.cache: dict[str, IndexArtifacts] = {}
+        self.cache: Dict[str, IndexArtifacts] = {}
 
     def _stem(self, pdf_path: str) -> str:
         return os.path.splitext(os.path.basename(pdf_path))[0]
 
     def ensure_index(self, pdf_path: str, rebuild: bool = False) -> IndexArtifacts:
+        if not os.path.isfile(pdf_path):
+            raise FileNotFoundError(f"PDF not found: {pdf_path}")
+
         stem = self._stem(pdf_path)
         if not rebuild and stem in self.cache:
             return self.cache[stem]
@@ -45,7 +41,6 @@ class RagPipeline:
                 self.cache[stem] = cached
                 return cached
 
-        # Build fresh
         chunks = extract_pdf_chunks(pdf_path)
         art = build_index(chunks, self.embedder)
         save_index(art, self.index_dir, stem)
