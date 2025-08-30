@@ -1,34 +1,32 @@
 # PaperBrain RAG
 
-PaperBrain RAG is a lightweight **Retrieval-Augmented Generation (RAG)** system that lets you upload a PDF (manuals, research papers, guides, etc.) and ask natural language questions about it.  
+**PaperBrain RAG** is a lightweight Retrieval-Augmented Generation (RAG) system that lets you upload a PDF (manuals, research papers, guides, etc.) and ask natural language questions about it.  
 
-Everything runs **locally on CPU** — no API keys, no GPU, no external services.  
+Everything runs **locally on CPU** — no API keys, no GPU, no external services. Just drop in a PDF and start asking questions.
 
 ---
 
 ## Features
-
-- **PDF Ingestion** → Extracts text from any PDF.
-- **Sentence-based Chunking** → Splits text into readable pieces.
-- **FAISS Index** → Efficient vector similarity search.  
-- **Local Embeddings** → Uses `all-MiniLM-L6-v2` from Sentence Transformers.
+- **PDF Ingestion** → Extracts text from any PDF. 
+- **Sentence-based Chunking** → Splits text into readable pieces.  
+- **FAISS Index** → Fast similarity search over embeddings.  
+- **Local Embeddings** → Uses `all-MiniLM-L6-v2` from Sentence Transformers.  
 - **Streamlit UI** → Clean, interactive interface.  
-- **Offline** → Runs on a regular laptop, no API calls.  
+- **Offline** → Runs on a regular laptop, no API calls required.  
 
 ---
 
 ## Project Structure
-
 ```
 
 PaperBrain-RAG/
 ├── data/
-│   ├── manuals/      
-│   └── indexes/      
+│   ├── manuals/  
+│   └── indexes/     
 ├── src/
-│   ├── retriever.py
-│   ├── rag_pipeline.py
-│   └── ui.py  
+│   ├── retriever.py 
+│   ├── rag_pipeline.py 
+│   └── ui.py             
 ├── requirements.txt
 └── README.md
 
@@ -37,19 +35,19 @@ PaperBrain-RAG/
 ---
 
 ## Installation
-
-Clone and install dependencies:
+Clone the repo and install dependencies:
 
 ```bash
 git clone https://github.com/sanjitchitturi/PaperBrain-RAG.git
 cd PaperBrain-RAG
 pip install -r requirements.txt
 ````
+
 ---
 
 ## Usage
 
-1. Put your PDF inside `data/manuals/` (or upload via the UI).
+1. Place your PDF in `data/manuals/` (or upload it via the Streamlit UI).
 2. Start the app:
 
 ```bash
@@ -58,20 +56,29 @@ streamlit run ui.py
 ```
 
 3. Open the Streamlit link in your browser.
-4. Ask questions like:
 
-   * *"How do I reset this device?"*
-   * *"Where is the power button?"*
-   * *"How do I change the batteries?"*
+4. Ask natural language questions such as:
+
+   * *How do I reset this device?*
+   * *Where is the power button?*
+   * *How do I change the batteries?*
 
 ---
 
 ## How It Works
 
-1. **PDF Processing** → Extract text per page, clean + split into sentence-based chunks.
-2. **Embeddings** → Chunks → vectors via `all-MiniLM-L6-v2` (runs on CPU).
-3. **FAISS Indexing** → Vectors stored in FAISS for fast similarity search.
+1. **PDF Processing** → Extract text per page and split into sentence-based chunks.
+2. **Embeddings** → Convert chunks into vectors with `all-MiniLM-L6-v2`.
+3. **FAISS Indexing** → Store vectors in FAISS for fast similarity search.
 4. **Retrieval** → Question → embed → nearest neighbor search.
-5. **Answer** → Top snippets are returned & concatenated for context.
+5. **Answer** → Top snippets are returned and concatenated for context.
+
+---
+
+## Notes
+
+* Runs fully offline, on CPU only.
+* Works with manuals, guides, research papers, or any readable PDF.
+* Indexes are cached in `data/indexes/` for faster repeated queries.
 
 ---
