@@ -8,12 +8,12 @@ Everything runs **locally on CPU** — no API keys, no GPU, no external services
 
 ## Features
 
-- **PDF Ingestion** → Extracts text from any PDF  
-- **Sentence-based Chunking** → Splits text into readable pieces  
-- **FAISS Index** → Efficient vector similarity search  
-- **Local Embeddings** → Uses `all-MiniLM-L6-v2` from Sentence Transformers  
-- **Streamlit UI** → Clean, interactive interface  
-- **Offline** → Runs on a regular laptop, no API calls  
+- **PDF Ingestion** → Extracts text from any PDF.
+- **Sentence-based Chunking** → Splits text into readable pieces.
+- **FAISS Index** → Efficient vector similarity search.  
+- **Local Embeddings** → Uses `all-MiniLM-L6-v2` from Sentence Transformers.
+- **Streamlit UI** → Clean, interactive interface.  
+- **Offline** → Runs on a regular laptop, no API calls.  
 
 ---
 
@@ -68,10 +68,10 @@ streamlit run ui.py
 
 ## How It Works
 
-1. **PDF Processing** → Extract text per page, clean + split into sentence-based chunks
-2. **Embeddings** → Chunks → vectors via `all-MiniLM-L6-v2` (runs on CPU)
-3. **FAISS Indexing** → Vectors stored in FAISS for fast similarity search
-4. **Retrieval** → Question → embed → nearest neighbor search
-5. **Answer** → Top snippets are returned & concatenated for context
+1. **PDF Processing** → Extract text per page, clean + split into sentence-based chunks.
+2. **Embeddings** → Chunks → vectors via `all-MiniLM-L6-v2` (runs on CPU).
+3. **FAISS Indexing** → Vectors stored in FAISS for fast similarity search.
+4. **Retrieval** → Question → embed → nearest neighbor search.
+5. **Answer** → Top snippets are returned & concatenated for context.
 
 ---
