@@ -1,6 +1,6 @@
 # PaperBrain RAG
 
-**PaperBrain RAG** is a lightweight Retrieval-Augmented Generation (RAG) system that lets you upload a PDF (manuals, research papers, guides, etc.) and ask natural language questions about it.  
+**PaperBrain RAG** is a lightweight Retrieval Augmented Generation system that lets you upload a PDF and ask natural language questions about it.  
 
 Everything runs **locally on CPU** — no API keys, no GPU, no external services. Just drop in a PDF and start asking questions.
 
@@ -19,7 +19,7 @@ Everything runs **locally on CPU** — no API keys, no GPU, no external services
 ## Project Structure
 ```
 
-PaperBrain-RAG/
+paperbrain-rag/
 ├── data/
 │   ├── manuals/  
 │   └── indexes/     
@@ -38,8 +38,8 @@ PaperBrain-RAG/
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/sanjitchitturi/PaperBrain-RAG.git
-cd PaperBrain-RAG
+git clone https://github.com/sanjitchitturi/paperbrain-rag.git
+cd paperbrain-rag
 pip install -r requirements.txt
 ````
 
@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. Place your PDF in `data/manuals/` (or upload it via the Streamlit UI).
+1. Place your PDF in `data/manuals/`.
 2. Start the app:
 
 ```bash
