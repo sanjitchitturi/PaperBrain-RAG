@@ -21,11 +21,11 @@ Everything runs **locally on CPU** — no API keys, no GPU, no external services
 
 paperbrain-rag/
 ├── data/
-│   ├── manuals/  
-│   └── indexes/     
+│   ├── indexes
+│   └── manuals    
 ├── src/
-│   ├── retriever.py 
 │   ├── rag_pipeline.py 
+│   ├── retriever.py 
 │   └── ui.py             
 ├── requirements.txt
 └── README.md
